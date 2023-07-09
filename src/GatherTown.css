@@ -1,0 +1,18 @@
+.character {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+.character img {
+  width: 100%;
+  height: 100%;
+}
+.background {
+  position: relative;
+  background-image: url("https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1920,f_auto,q_auto/171954/666456_223603.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
