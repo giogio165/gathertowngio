@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { getDatabase, ref, onValue, set } from "firebase/database";
 import "./GatherTown.css";
 import characterImage from "../src/Image/character.png";
-import firebaseapp from "./firebase";
 
 const GatherTown = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -33,7 +32,6 @@ const GatherTown = () => {
         }));
       }
     };
-
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
@@ -55,14 +53,14 @@ const GatherTown = () => {
 
     updatePosition();
 
-    // Subscribe to real-time updates
+    // real-time updates
     const unsubscribe = onValue(dbRef, (snapshot) => {
       const newPosition = snapshot.val();
       setPosition(newPosition);
     });
 
     return () => {
-      unsubscribe(); // Unsubscribe from real-time updates when the component unmounts
+      unsubscribe();
     };
   }, [position]);
 
